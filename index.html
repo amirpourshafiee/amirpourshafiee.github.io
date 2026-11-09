@@ -1,268 +1,347 @@
-
-<!DOCTYPE html>
-<html lang="en" class="no-js no-svg">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-
-<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
-<title>Cruz Controlled &#8211; Robotics Research</title>
-<link rel='dns-prefetch' href='//s0.wp.com' />
-<link rel='dns-prefetch' href='//s.gravatar.com' />
-<link rel='dns-prefetch' href='//fonts.googleapis.com' />
-<link rel='dns-prefetch' href='//s.w.org' />
-<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
-<link rel="alternate" type="application/rss+xml" title="Cruz Controlled &raquo; Feed" href="http://www.cruzcontrolled.com/feed/" />
-<link rel="alternate" type="application/rss+xml" title="Cruz Controlled &raquo; Comments Feed" href="http://www.cruzcontrolled.com/comments/feed/" />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.cruzcontrolled.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.4"}};
-			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
+<title>Amir Pourshafiee</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Amir Pourshafiee, staff verification and validation engineer for perception and XR systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout concept: a camera frame beside the name, then a measured log of the work, ruled off by a tick-marked calibration line. */
+:root {
+  --paper: #eef2f3;
+  --surface: #e1e8ea;
+  --ink: #12232e;
+  --muted: #4c5f6b;
+  --rule: #bccad0;
+  --accent: #006d7f;
+  --track: #b35f00;
+  --frame: #12232e;
+  --frame-ink: #d9e6ea;
+  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1a20; --surface: #17252d; --ink: #e4edf0; --muted: #9fb2bc; --rule: #2d414c;
+    --accent: #52c4d6; --track: #f0a748; --frame: #081116; --frame-ink: #d9e6ea; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f1a20; --surface: #17252d; --ink: #e4edf0; --muted: #9fb2bc; --rule: #2d414c;
+  --accent: #52c4d6; --track: #f0a748; --frame: #081116; --frame-ink: #d9e6ea; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font: 400 1rem/1.6 var(--body); }
+.wrap {
+  max-width: 1080px; margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.mono { font-family: var(--mono); font-size: .8125rem; font-variant-numeric: tabular-nums; }
+.topbar { display: flex; justify-content: flex-end; gap: 16px; flex-wrap: wrap; padding-block: 20px; color: var(--muted); }
+.topbar nav { display: flex; gap: 16px; flex-wrap: wrap; }
+.topbar a { color: inherit; }
+.hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 40px; align-items: center; padding-block: 32px 56px; }
+h1 { font: 800 clamp(3.75rem, 8.6vw, 6.75rem)/.88 var(--display); text-transform: uppercase; margin: 0 0 24px; letter-spacing: .005em; overflow-wrap: anywhere; }
+.lede { font-size: 1.1875rem; line-height: 1.5; max-width: 34em; margin: 0 0 16px; }
+.status { color: var(--muted); margin: 0; }
+figure { margin: 0; min-width: 0; }
+.cam { background: var(--frame); aspect-ratio: 4 / 3; width: 100%; max-width: 100%; display: block; object-fit: cover; }
+figcaption { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; color: var(--muted); padding-top: 8px; }
+.ruler {
+  height: 10px;
+  background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 18px);
+  opacity: .55;
+}
+section { padding-block: 44px; }
+section + section { border-top: 1px solid var(--rule); }
+h2 { font: 800 clamp(2.25rem, 5vw, 3.25rem)/1 var(--display); text-transform: uppercase; margin: 0 0 32px; text-wrap: balance; }
+h3 { font: 600 1.0625rem/1.35 var(--body); margin: 0; }
+.intro { max-width: 40em; margin: -16px 0 32px; color: var(--muted); }
+.log { display: grid; gap: 26px; }
+.role { display: grid; grid-template-columns: 10.25rem minmax(0, 1fr); gap: 8px 24px; }
+.role > .mono { color: var(--muted); padding-top: 3px; }
+.org { color: var(--muted); margin: 0 0 8px; }
+.role ul { margin: 0; padding-left: 1.1em; max-width: 44em; display: grid; gap: 4px; }
+.good { font-family: var(--mono); font-size: .9375rem; color: var(--accent); }
+.earlier { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.earlier li { display: grid; grid-template-columns: 10.25rem minmax(0, 1fr); gap: 4px 24px; }
+.earlier .mono { color: var(--muted); padding-top: 3px; }
+.earlier-head { margin: 30px 0 14px; }
+.exp-photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 18px 0 0; }
+.exp-photos figcaption { margin-top: 6px; color: var(--muted); font-size: .8125rem; }
+.projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px 24px; }
+.projects p, .feature p { margin: 6px 0 0; }
+.tag { display: block; color: var(--track); margin-bottom: 4px; }
+.feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 32px; margin-bottom: 36px; align-items: start; }
+.feature-text p { max-width: 38em; }
+.feature-text .team { color: var(--muted); font-size: .9375rem; }
+.gallery { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 10px; min-width: 0; }
+.gallery .g-main { grid-row: span 3; }
+.gallery img, .thumb { display: block; width: 100%; height: 100%; object-fit: cover; max-width: 100%; background: var(--frame); }
+.gallery figure { position: relative; }
+.gallery .g-main img { object-fit: contain; background: #000000; }
+.feature-video { grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); align-items: center; }
+.clip video { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 16 / 9; background: var(--frame); }
+.gallery figcaption { position: absolute; left: 0; bottom: 0; padding: 4px 8px; background: var(--frame); color: var(--frame-ink); font-size: .6875rem; }
+.thumb { aspect-ratio: 4 / 3; height: auto; margin-bottom: 14px; object-fit: contain; }
+.thumb-light { background: #ffffff; }
+.caption-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0 0 14px; }
+.caption-pair img { aspect-ratio: 4 / 3; object-fit: cover; background: var(--frame); }
+.caption-pair figcaption { margin-top: 4px; color: var(--muted); font-size: .75rem; font-style: italic; }
+.pubs { margin: 0; padding: 0; list-style: none; display: grid; gap: 16px; max-width: 48em; }
+.pubs b { font-weight: 600; }
+.skills { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 10px 24px; margin: 0; max-width: 56em; }
+.skills dt { color: var(--muted); padding-top: 2px; }
+.skills dd { margin: 0; }
+.contact { background: var(--surface); }
+.contact-list { display: grid; gap: 8px; font-family: var(--mono); font-size: .9375rem; overflow-wrap: anywhere; }
+.contact-list span { user-select: all; }
+@media (max-width: 860px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 16px 40px; }
+  .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .feature, .feature-video { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .role, .earlier li, .skills { grid-template-columns: minmax(0, 1fr); }
+  .projects, .exp-photos { grid-template-columns: minmax(0, 1fr); }
+  section { padding-block: 32px; }
 }
 </style>
-<link rel='stylesheet' id='fontsforwebstyle-css'  href='http://www.cruzcontrolled.com/wp-content/plugins/font/css/fontsforwebstyle.css?pver=7.5.1&#038;ver=4.7.4' type='text/css' media='all' />
-<link rel='stylesheet' id='jquery-ui-css'  href='http://www.cruzcontrolled.com/wp-content/plugins/font/css/start/jquery-ui-1.8.14.custom.css?ver=4.7.4' type='text/css' media='all' />
-<link rel='stylesheet' id='colorpicker2-css'  href='http://www.cruzcontrolled.com/wp-content/plugins/font/css/colorpicker.css?ver=4.7.4' type='text/css' media='all' />
-<link rel='stylesheet' id='pirate_forms_front_styles-css'  href='http://www.cruzcontrolled.com/wp-content/plugins/pirate-forms/css/front.css?ver=4.7.4' type='text/css' media='all' />
-<link rel='stylesheet' id='twentyseventeen-fonts-css'  href='https://fonts.googleapis.com/css?family=Libre+Franklin%3A300%2C300i%2C400%2C400i%2C600%2C600i%2C800%2C800i&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
-<link rel='stylesheet' id='twentyseventeen-style-css'  href='http://www.cruzcontrolled.com/wp-content/themes/twentyseventeen/style.css?ver=4.7.4' type='text/css' media='all' />
-<!--[if lt IE 9]>
-<link rel='stylesheet' id='twentyseventeen-ie8-css'  href='http://www.cruzcontrolled.com/wp-content/themes/twentyseventeen/assets/css/ie8.css?ver=1.0' type='text/css' media='all' />
-<![endif]-->
-<link rel='stylesheet' id='jetpack_css-css'  href='http://www.cruzcontrolled.com/wp-content/plugins/jetpack/css/jetpack.css?ver=4.8.2' type='text/css' media='all' />
-<link rel='stylesheet' id='colorbox-css'  href='http://www.cruzcontrolled.com/wp-content/plugins/slideshow-gallery/views/default/css/colorbox.css?ver=1.3.19' type='text/css' media='all' />
-<link rel='stylesheet' id='fontawesome-css'  href='http://www.cruzcontrolled.com/wp-content/plugins/slideshow-gallery/views/default/css/fontawesome.css?ver=4.4.0' type='text/css' media='all' />
-<link rel='stylesheet' id='wp-members-css'  href='http://www.cruzcontrolled.com/wp-content/plugins/wp-members/css/wp-members-2014.css?ver=3.1.7' type='text/css' media='all' />
 
-</script>
+<div class="wrap">
+  <header class="topbar mono">
+    <nav aria-label="Sections">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<link rel='https://api.w.org/' href='http://www.cruzcontrolled.com/wp-json/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.cruzcontrolled.com/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.cruzcontrolled.com/wp-includes/wlwmanifest.xml" />
-<meta name="generator" content="WordPress 4.7.4" />
-<link rel="canonical" href="http://www.cruzcontrolled.com/" />
-<link rel='shortlink' href='http://wp.me/P81Dx9-2' />
-<link rel="alternate" type="application/json+oembed" href="http://www.cruzcontrolled.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.cruzcontrolled.com%2F" />
-<link rel="alternate" type="text/xml+oembed" href="http://www.cruzcontrolled.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.cruzcontrolled.com%2F&#038;format=xml" />
+  <main>
+    <div class="hero">
+      <div>
+        <h1>Amir<br>Pourshafiee</h1>
+        <p class="lede">Staff verification and validation engineer with 9 years building quality systems for perception, XR, and AI at Magic Leap and Google.</p>
+      </div>
+      <figure>
+        <video class="cam" src="assets/car-detection.mp4" poster="assets/car-detection.jpg" width="960" height="540" autoplay muted loop playsinline aria-label="Dashcam clip with detected cars highlighted by shaded boxes."></video>
+        <figcaption class="mono"><span>YOLOv3 car detection, dashcam footage</span></figcaption>
+      </figure>
+    </div>
+  </main>
+</div>
 
-<!-- Contact Us Form -->
-<style type="text/css">
-.cuf_input {display:none !important; visibility:hidden !important;}
-#contactsubmit:hover, #contactsubmit:focus {
-	background: #849F00 repeat-x;
-	color: #FFF;
-	text-decoration: none;
-}
-#contactsubmit:active {background: #849F00}
-#contactsubmit {
-	color: #FFF;
-	margin-top:5px;
-	margin-bottom:5px;
-	background: #738c00 repeat-x;
-	display: block;
-	float: left;
-	/*height: 28px;*/
-	padding-right: 23px;
-	padding-left: 23px;
-	font-size: 12px;
-	text-transform: uppercase;
-	text-decoration: none;
-	font-weight: bold;
-	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
-	filter: dropshadow(color=rgba(0, 0, 0, 0.2), offx=0, offy=1);
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	-webkit-transition: background 300ms linear;
--moz-transition: background 300ms linear;
--o-transition: background 300ms linear;
-transition: background 300ms linear;
--webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
--moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
-text-align:center
-}
-#tinyform {
-clear: both;
-width:500px;
-	margin-left:auto;
-	margin-right:auto;
-	/*margin-top:30px;*/
-	padding:20px;
-	padding-bottom:0px;
-	-webkit-border-radius:5px;
-	-moz-border-radius:5px;
-	border-radius:5px;
-	-webkit-box-shadow:0px 0px 10px 0px rgba(0,0,0,0.2);
-	-moz-box-shadow:0px 0px 10px 0px rgba(0,0,0,0.2);
-	box-shadow:0px 0px 10px 0px rgba(0,0,0,0.2);
-	border:4px solid #FFF;
-	-webkit-transition:all 200ms linear;
-	-moz-transition:all 200ms linear;
-	-o-transition:all 200ms linear;
-	transition:all 200ms linear;
-}
-.cuf_field_1 {
-	margin-bottom:10px;
-}
-.cuf_field {
-	-moz-box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-	box-sizing:border-box;
-	background:#fff;
-	border:1px solid #A9B3BC;
-	padding:8px;
-	width:100%;
-	margin-top:5px;
-margin-bottom:15px;
-	outline:none
-}
-.cuf_textarea {
-	-moz-box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-	box-sizing:border-box;
-	background:#fff;
-	border:1px solid #A9B3BC;
-	padding:8px;
-	width:100%;
-	margin-top:5px;
-	outline:none;
-margin-bottom:15px;
-}
+<div class="ruler" aria-hidden="true"></div>
 
+<div class="wrap">
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="log">
+      <article class="role">
+        <div class="mono">Jan 2025 to Oct 2026</div>
+        <div>
+          <h3>Staff Software Engineer, QA</h3>
+          <p class="org">Google (TVC via Magic Leap), Sunnyvale, CA</p>
+          <ul>
+            <li>Led perception quality validation for an Android XR reference design across <span class="good">5</span> release milestones, setting release criteria and presenting go/no-go status to engineering and program leadership. Surfaced <span class="good">14</span> release-blocking defects before launch.</li>
+            <li>Built an automated LLM-as-a-judge evaluation framework with Gemini, benchmarked against <span class="good">200</span> annotated videos at <span class="good">&kappa; = 0.68</span> and an <span class="good">8%</span> false positive rate.</li>
+            <li>Wrote test protocols and acceptance criteria for head tracking, marker and object detection, and online calibration, adopted by a partner team and 6 test engineers.</li>
+            <li>Conducted weekly regression runs for 2 Android XR devices and a Galaxy XR.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="role">
+        <div class="mono">Apr 2024 to Dec 2024</div>
+        <div>
+          <h3>Staff Software Engineer, Software Quality</h3>
+          <p class="org">Magic Leap, Sunnyvale, CA</p>
+          <ul>
+            <li>Led a perception effort with 3 QA engineers.</li>
+            <li>Built hardware-in-the-loop automation on a robotic arm platform for dynamic marker detection scenarios, fully automating marker tracking regression and removing about <span class="good">120 hours</span> of manual testing per release.</li>
+            <li>Raised perception test coverage from <span class="good">85%</span> to <span class="good">93%</span> by working with 8 development teams on defect triage and test strategy.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="role">
+        <div class="mono">Nov 2019 to Apr 2024</div>
+        <div>
+          <h3>Senior Software Engineer, Perception Quality</h3>
+          <p class="org">Magic Leap, Sunnyvale, CA</p>
+          <ul>
+            <li>Designed tools, metrics, and test cases to validate online calibration, SLAM, VIO, marker tracking, and depth sensing.</li>
+            <li>Automated 23% of perception test cases (350 smoke and regression tests) and reduced post-release defects by <span class="good">30%</span>.</li>
+            <li>Led triage of customer software feedback, managing and presenting weekly reports to the executive leadership team.</li>
+            <li>Built a perception system dashboard adopted by program management and software leadership, replacing manual status prep with an automated weekly newsletter.</li>
+            <li>Received the Super Leaper award, a company-wide monthly recognition, in March 2023.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="role">
+        <div class="mono">Sep 2017 to Nov 2019</div>
+        <div>
+          <h3>Software Development Engineer in Test, Computer Vision</h3>
+          <p class="org">Magic Leap, Sunnyvale, CA</p>
+          <ul>
+            <li>Turned perception system requirements into test cases and tooling specs for motion estimation, 3D reconstruction, and calibration.</li>
+            <li>Root caused defects in those systems with development tiger teams.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
 
-</style>
-<style type="text/css">PICK AN ELEMENT NOW - or type CSS selector(advanced) {
-font-size: 30px !important;
-color: #444 !important;
-}
-DIV DIV DIV.content-area DIV.site-content ARTICLE#post-45.post-45.page.type-page.status-publish.hentry {
-top: -12px !important;
-left: 0px !important;
-position: relative !important;
-}
-BODY DIV DIV.site-main DIV.main-content DIV#primary.content-area {
-top: -9px !important;
-left: -2px !important;
-position: relative !important;
-}
-</style>			<link rel="stylesheet" href="http://www.cruzcontrolled.com/wp-content/plugins/zedity/css/zedity-reset.css?7.2.1" type="text/css" media="all" />
-			<style></style>
-<link rel='dns-prefetch' href='//v0.wordpress.com'>
-<link rel='dns-prefetch' href='//i0.wp.com'>
-<link rel='dns-prefetch' href='//i1.wp.com'>
-<link rel='dns-prefetch' href='//i2.wp.com'>
-<style type='text/css'>img#wpstats{display:none}</style>		<script type="text/javascript">
-			var ajaxproxy = 'http://www.cruzcontrolled.com/wp-admin/admin-ajax.php';
-			var fontBlogUrl = 'http://www.cruzcontrolled.com';
-			var fontBlogName = 'Cruz Controlled';
-			var fontPluginVersion = '7.5.1';
-		</script>
+    <h3 class="earlier-head">Before Magic Leap</h3>
+    <ul class="earlier">
+      <li><span class="mono">Feb 2016 to Sep 2016</span><span><b>Pearl Automation</b>, camera and computer vision intern. Built an object tracking video annotation tool after benchmarking ORB, SURF, FREAK with BRISK, SIFT, and AKAZE, and an SVM anomaly detector for faulty camera modules. Also handled camera hardware bring-up, image parameter tuning, and IQ performance testing with Imatest.</span></li>
+      <li><span class="mono">Sep 2014 to Apr 2017</span><span><b>UC Santa Cruz</b>, graduate research assistant. Cell growth monitoring with computer vision, RF node localization, and the data acquisition system for NASA's SIERRA-B drone. Teaching Assistant of the Year, 2016.</span></li>
+      <li><span class="mono">Sep 2013 to Aug 2014</span><span><b>UC Santa Cruz</b>, junior specialist. Developed a collaborative, distributed sensing rover for magnetic surveying of fields.</span></li>
+      <li><span class="mono">Aug 2013 to Sep 2013</span><span><b>NASA Ames Research Center</b>, unmanned plane reliability intern. Analyzed magnetometer and GPS data and examined electro-mechanical safety factors of a drone.</span></li>
+      <li><span class="mono">Jul 2012 to Sep 2012</span><span><b>Canrig Drilling Technology</b>, electrical engineering intern. Built a simulation box to verify PLC signal integrity and a bypass system to test a drilling wrench.</span></li>
+    </ul>
+    <div class="exp-photos">
+      <figure><img class="thumb thumb-light" src="assets/pearl-camera.jpg" alt="Pearl's camera module and its license-plate-mount housing." width="300" height="92" loading="lazy"><figcaption class="mono">Pearl camera hardware</figcaption></figure>
+      <figure><img class="thumb" src="assets/nasa-uas-intern.jpg" alt="A yellow research aircraft parked on a dirt airstrip, with a ground support trailer and sensor equipment nearby." width="300" height="135" loading="lazy"><figcaption class="mono">NASA Ames UAS reliability work</figcaption></figure>
+      <figure><img class="thumb" src="assets/canrig-plc.jpg" alt="Close-up of a PLC terminal block with rows of green and black wiring connectors." width="300" height="165" loading="lazy"><figcaption class="mono">Canrig PLC signal integrity bench</figcaption></figure>
+    </div>
+  </section>
 
-<!-- Jetpack Open Graph Tags -->
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Cruz Controlled" />
-<meta property="og:description" content="Robotics Research" />
-<meta property="og:url" content="http://www.cruzcontrolled.com/" />
-<meta property="og:site_name" content="Cruz Controlled" />
-<meta property="og:image" content="http://www.cruzcontrolled.com/wp-content/uploads/2014/02/3N5S6_Hd4D-YqgmMLYWREipjhqsXzmmhvw1ELNGxkxQw238-h407-no-175x300.jpg" />
-<meta name="twitter:card" content="summary" />
-<link rel="icon" href="https://i0.wp.com/www.cruzcontrolled.com/wp-content/uploads/2015/01/logo2.png?fit=28%2C32" sizes="32x32" />
-<link rel="icon" href="https://i0.wp.com/www.cruzcontrolled.com/wp-content/uploads/2015/01/logo2.png?fit=45%2C52" sizes="192x192" />
-<link rel="apple-touch-icon-precomposed" href="https://i0.wp.com/www.cruzcontrolled.com/wp-content/uploads/2015/01/logo2.png?fit=45%2C52" />
-<meta name="msapplication-TileImage" content="https://i0.wp.com/www.cruzcontrolled.com/wp-content/uploads/2015/01/logo2.png?fit=45%2C52" />
-</head>
+  <section id="projects">
+    <h2>Projects</h2>
+    <p class="intro">Robotics and computer vision projects, most of them carried over from my original site.</p>
+    <article class="feature">
+      <div class="feature-text">
+        <span class="mono tag">NASA Centennial Challenges, Sample Return Robot 2013</span>
+        <h3>UCSC Autonomous Rover</h3>
+        <p>An autonomous rover built for NASA's Sample Return Robot challenge. It used computer vision to recognize a pre-cached sample and a path-finding algorithm to drive to it. To mimic conditions off Earth, competitors could not use compasses, GPS, or GSM.</p>
+        <p>The 30 kg rover rides on a rocker-bogie suspension for rough terrain and can turn in place. Its feedback control uses a gyroscope, 2 encoders, 3 panning infrared proximity sensors, force sensing resistors, impact sensors for sample collection, and 3 cameras. We moved navigation off the gyroscope and onto wheel encoders partway through the build after gyro drift proved too noisy to trust outdoors.</p>
+        <p>D* Lite path planning brought the rover close to the goal, and a Haar cascade classifier found the sample in the field. A finite-state machine sequenced the run: search, approach, collect, and return, with the return leg replanning home with D* Lite and scanning for a QR code left on the starting platform. We tested the full sequence repeatedly on UCSC's OPERS field before the competition.</p>
+        <p>I co-led the team and designed the sensor subsystems. The rover qualified on May 8 with a clean autonomous run, then competed at WPI on June 4 to 5 against 13 other teams. In the competition run it found the sample but knocked it over on approach due to a camera misalignment, then couldn't make it back to the start after a wheel pivot servo failed. The team still received a NASA Technology Achievement Award for the Sample Return Robot Challenge 2013.</p>
+        <p class="team">Team: Geoff Budd, Amir Pourshafiee, Sina Kahnemouyi, Samir Mohammed, Tuan Ho, Leonardo Bravo</p>
+      </div>
+      <div class="gallery">
+        <figure class="g-main"><img src="assets/rover.jpg" alt="The UCSC rover: a wooden chassis with a laptop on top, a camera mast, and six wheels on a rocker-bogie suspension." width="545" height="640" loading="lazy"></figure>
+        <figure><img src="assets/rover-field.jpg" alt="The rover on its starting platform on a grass field." width="268" height="300" loading="lazy"><figcaption class="mono">On the start platform</figcaption></figure>
+        <figure><img src="assets/rover-detection.jpg" alt="Camera view of grass with a red box around the detected white sample object." width="276" height="300" loading="lazy"><figcaption class="mono">Sample detected in the field</figcaption></figure>
+        <figure><img src="assets/rover-chassis.jpg" alt="The rover's bare chassis showing the exposed electronics: motor drivers, wiring, and a battery pack mounted to the aluminum frame." width="276" height="300" loading="lazy"><figcaption class="mono">Chassis and electronics</figcaption></figure>
+      </div>
+    </article>
+    <article class="feature feature-video">
+      <div class="feature-text">
+        <span class="mono tag">YOLOv3, object detection</span>
+        <h3>Car detection</h3>
+        <p>Detecting cars in dashcam footage with a YOLOv3 network. The clip shows detections on a freeway, drawn over each frame.</p>
+      </div>
+      <figure class="clip">
+        <video src="assets/car-detection.mp4" poster="assets/car-detection.jpg" width="960" height="540" autoplay muted loop playsinline aria-label="Dashcam clip with detected cars highlighted by shaded boxes."></video>
+      </figure>
+    </article>
+    <div class="projects">
+      <article>
+        <span class="mono tag">Coursera, Michigan State University</span>
+        <h3>Unity 2D games</h3>
+        <p><a href="https://trialtrue.itch.io/retro-2d-shooter">Space Blaster</a> and <a href="https://trialtrue.itch.io/stairwars">StairWars</a>: two Unity WebGL games extended with new levels, enemies, and mechanics for Game Design and Development 1 and 2.</p>
+      </article>
+      <article>
+        <img class="thumb thumb-light" src="assets/rf-localization.jpg" alt="Grid map with three fixed RF anchors and a mobile node with its estimated coordinates." width="300" height="282" loading="lazy">
+        <span class="mono tag">AIAA SciTech 2016</span>
+        <h3>RF Network Localization</h3>
+        <p>Locating a mobile node from signal strength to fixed RF nodes, using least-squares trilateration. Published at AIAA SciTech.</p>
+      </article>
+      <article>
+        <img class="thumb" src="assets/turtle.jpg" alt="CAD model of the turtle-inspired robot's enclosed body." width="300" height="212" loading="lazy">
+        <span class="mono tag">Non-wheeled locomotion</span>
+        <h3>Turtle-inspired Robot</h3>
+        <p>A mechanically simple system for robots that cannot use wheels because of atmospheric constraints.</p>
+      </article>
+      <article>
+        <img class="thumb" src="assets/walle.jpg" alt="CAD model of the Walle robot with its ball launcher." width="300" height="229" loading="lazy">
+        <span class="mono tag">Low-cost robotics</span>
+        <h3>Walle</h3>
+        <p>A low-cost robot that follows and recognizes line patterns, avoids obstacles, tracks an infrared beacon, and shoots ping-pong balls at it.</p>
+      </article>
+      <article>
+        <img class="thumb thumb-light" src="assets/acid-cells.jpg" alt="Microscope image of cultured cells, phase-contrast, used for automated cell identification." width="300" height="259" loading="lazy">
+        <span class="mono tag">Master's thesis</span>
+        <h3>Cancer cell growth measurement</h3>
+        <p>Automated Cell Identification Device (ACID): a computer vision and machine learning pipeline, using SURF and SIFT, that detects single cells in time-lapse microscopy and measures growth rate. Built with an automated nano-injection system to interrogate individual cells. <a href="https://search.proquest.com/openview/16dae90723531e368216553d7d1e6831/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y">Read the thesis</a></p>
+      </article>
+      <article>
+        <span class="mono tag">Zigbee, magnetometry</span>
+        <h3>Collaborative Rovers</h3>
+        <p>Two rovers that scan and map a field's magnetic field while communicating over Zigbee.</p>
+      </article>
+      <article>
+        <img class="thumb" src="assets/keypoints-detection.jpg" alt="68 facial keypoints predicted by the trained CNN, plotted as teal dots over the eyes, brows, nose, and mouth of a face from the project's test set." width="1032" height="544" loading="lazy">
+        <span class="mono tag">CNN, facial landmarks</span>
+        <h3>Facial Keypoint Detection</h3>
+        <p>A convolutional neural network trained to detect facial keypoints, such as the eyes, nose, and mouth corners, in images. <a href="https://www.udacity.com/certificate/e/df7675c8-43d1-11eb-bc8f-c7aa982877fe">Computer Vision Nanodegree</a> project 1.</p>
+      </article>
+      <article>
+        <div class="caption-pair">
+          <figure>
+            <img src="assets/captioning-surf.jpg" alt="Test image of a surfer on a wave, captioned by the model." loading="lazy">
+            <figcaption>"a man on a surfboard riding a wave in the ocean"</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/captioning-miss.jpg" alt="Test image of a cat beside a potted plant, captioned by the model." loading="lazy">
+            <figcaption>"a vase of flowers sitting on top of a table"</figcaption>
+          </figure>
+        </div>
+        <span class="mono tag">CNN-RNN, attention</span>
+        <h3>Image Captioning</h3>
+        <p>A CNN encoder paired with an RNN decoder, with attention, trained to generate natural-language captions for images. Output on the project's test set, shown above: one it got right, one it didn't. <a href="https://www.udacity.com/certificate/e/df7675c8-43d1-11eb-bc8f-c7aa982877fe">Computer Vision Nanodegree</a> capstone project.</p>
+      </article>
+      <article>
+        <img class="thumb thumb-light" src="assets/sierra-uas.jpg" alt="3D render of the SIERRA-B fixed-wing drone with its sensor payload labeled: fluxgate magnetometer, hyperspectral and thermal cameras, laser altimeter, GPS." width="300" height="293" loading="lazy">
+        <span class="mono tag">Hyperspectral, thermal, SfM</span>
+        <h3>SIERRA-B data system</h3>
+        <p>A high-throughput, low-latency data acquisition system for the SIERRA-B UAS, a NASA and USGS survey drone, handling hyperspectral, thermal, and SfM cameras with a laser altimeter, fluxgate magnetometer, GPS, and IMUs.</p>
+      </article>
+      <article>
+        <span class="mono tag">DeepLearning.AI, AWS</span>
+        <h3>Generative AI with LLMs labs</h3>
+        <p>Three graded labs: zero, one, and few-shot prompting for dialogue summarization; full and parameter-efficient (LoRA) fine-tuning of a summarization model; and reinforcement learning (PPO) to fine-tune FLAN-T5 toward less-toxic summaries. <a href="https://www.coursera.org/account/accomplishments/verify/RBGXG6D3CEQ3">Certificate</a>, Jul 2024.</p>
+      </article>
+    </div>
+  </section>
 
-<body class="home page-template-default page page-id-2 twentyseventeen-front-page page-two-column colors-light">
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+  <section id="publications">
+    <h2>Publications and posters</h2>
+    <ul class="pubs">
+      <li>S. Kahnemouyi, A. Pourshafiee, N. Cramer, H. Kassamnath, K. Obracza, M. Teodorescu, J. Glen. <b>RF Network Localization for Unmanned Robotic Systems.</b> AIAA SciTech, San Diego, CA, Jan 2016. <a href="https://arc.aiaa.org/doi/abs/10.2514/6.2016-1495">doi:10.2514/6.2016-1495</a></li>
+      <li>A. Pourshafiee, S. Rad, A. Lohith, C. Cable, R. E. Ozel, S. Kahnemouyi, J. Raskatov, M. Teodorescu, N. Pourmand. <b>Automated Cell Identification Device.</b> Poster, CITRIS Day 2015, Berkeley, CA, Oct 13, 2015.</li>
+      <li>A. Lohith, S. Rad, A. Pourshafiee, C. Cable, R. E. Ozel, J. Raskatov, M. Teodorescu, N. Pourmand. <b>Single-cell Automated Imaging and Nano-injection Tool.</b> Poster, CITRIS Day 2015, Berkeley, CA, Oct 13, 2015.</li>
+      <li>J. Baumgartner, A. Pourshafiee, S. Kahnemouyi, R. Dal, J. Spritzer, M. Teodorescu. <b>Collaborative Distributed Sensing Rovers.</b> Poster, 2014 NASA Ames-UC Research Review Day, Moffett Field, CA, Feb 10, 2014.</li>
+      <li>S. Kahnemouyi, A. Pourshafiee, A. Seger, N. Pourmand, M. Teodorescu. <b>Biologists' Voltmeter.</b> Poster, 2014 NASA Ames-UC Research Review Day, Moffett Field, CA, Feb 10, 2014.</li>
+      <li>G. Budd, A. Pourshafiee, S. Kahnemouyi, T. Ho, L. Bravo, S. Mohammed. <b>UCSC Autonomous Rover.</b> Poster, UC Santa Cruz Industrial Partners Day and Senior Design Poster Session, Santa Cruz, CA, June 13, 2013.</li>
+    </ul>
+  </section>
 
-	<header id="masthead" class="site-header" role="banner">
+  <section id="skills">
+    <h2>Skills and education</h2>
+    <dl class="skills">
+      <dt class="mono">Languages</dt><dd>Python, C++, MATLAB, SQL, R</dd>
+      <dt class="mono">Algorithms</dt><dd>CNN, LSTM, SVM, SIFT, SURF, optical flow, ORB-SLAM, EKF, VIO</dd>
+      <dt class="mono">Tools</dt><dd>Claude Code, Unity, Tableau, Jenkins, Docker, LabVIEW, Git, Gerrit</dd>
+      <dt class="mono">Libraries</dt><dd>OpenCV, NumPy, PyTorch, TensorFlow, Keras, seaborn, pytest</dd>
+      <dt class="mono">Sensors</dt><dd>Cameras, LIDAR, IMUs, GPS, IR proximity, Hall effect; I2C, SPI, UART, CAN</dd>
+      <dt class="mono">Education</dt><dd>M.S. Computer Engineering, 4.0 GPA, and B.S. Electrical Engineering, UC Santa Cruz</dd>
+      <dt class="mono">Certificates</dt><dd><a href="https://www.udacity.com/certificate/e/df7675c8-43d1-11eb-bc8f-c7aa982877fe">Computer Vision Nanodegree</a> (Udacity, co-created with Affectiva and the NVIDIA Deep Learning Institute), Feb 2021; <a href="https://www.coursera.org/account/accomplishments/verify/RBGXG6D3CEQ3">Generative AI with LLMs</a> (DeepLearning.AI and AWS), Jul 2024; <a href="https://www.coursera.org/account/accomplishments/verify/GXL4WUHIU3MA">Claude Code: Software Engineering with Generative AI Agents</a> (Vanderbilt), Apr 2026</dd>
+    </dl>
+  </section>
+</div>
 
-		<div class="custom-header">
-
-	<div class="custom-header-media">
-		<div id="wp-custom-header" class="wp-custom-header"></div>	</div>
-
-	<div class="site-branding">
-	<div class="wrap">
-
-
-</div><!-- .site-branding -->
-
-</div><!-- .custom-header -->
-
-
-
-	</header><!-- #masthead -->
-
-
-	<div class="site-content-contain">
-		<div id="content" class="site-content">
-
-<div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
-
-		<article id="post-2" class="twentyseventeen-panel  post-2 page type-page status-publish hentry" >
-
-
-	<div class="panel-content">
-		<div class="wrap">
-			<header class="entry-header">
-				<h2 class="entry-title">Amir Pourshafiee</h2>
-
-			</header><!-- .entry-header -->
-
-			<div class="entry-content">
-				<p><a href="https://i1.wp.com/www.cruzcontrolled.com/wp-content/uploads/2014/02/3N5S6_Hd4D-YqgmMLYWREipjhqsXzmmhvw1ELNGxkxQw238-h407-no.jpg"><img class="size-medium wp-image-377 alignright" src="https://i1.wp.com/www.cruzcontrolled.com/wp-content/uploads/2014/02/3N5S6_Hd4D-YqgmMLYWREipjhqsXzmmhvw1ELNGxkxQw238-h407-no.jpg?resize=175%2C300" alt="3N5S6_Hd4D-YqgmMLYWREipjhqsXzmmhvw1ELNGxkxQ=w238-h407-no" data-recalc-dims="1" /></a> I am a Robotics and Computer Vision Researcher and Engineer. I received a Masters degree in Computer Engineering from UC Santa Cruz along with a Bachelor of Science in Electrical Engineering and a Bachelor of Arts in Network and Digital Technology. My interests include Robotics, Machine Learning, Computer Vision, and Feedback Control.</p>
-<p>I have several years of robotics, computer vision, and machine learning experience across different fields including Academia, Automotive, Consumer Electronics, HealthCare, Government, and Oil and Gas industries. I was working in a stealth startup that retrofits old cars with new ADAS capabilities which launched in June 2016 (Pearl Automation). Autonomous driving and solutions are very exciting to me and that is why I am applying for this great opening.</p>
-<p>I have been researching several different feature detector and trackers such as SIFT, SURF, ORB, FREAK with BRISK, FAST, and AKAZE algorithms. I am actively researching SVMs, ANNs, and CNNs.</p>
-<p><a href="https://www.dropbox.com/s/p3mp10jgcxrteeh/Resume%20April%202017.docx?dl=0">Resume</a> and <a href="https://www.dropbox.com/s/ri7oj14urbjaqx8/Resume%20April%202017.pdf?dl=0">pdf format</a>.</p>
-<p>Skills:<br />
-C/C++, Python, Matlab, LabVIEW, Computer Vision and Image Signal Processing, Machine Learning, OpenCV, TensorFlow, Matlab, CUDA Data Visualization, Networking, Event Driven and Object Oriented Programming, Signal Conditioning</p>
-<p>Sensors:<br />
-Cameras, LIDARs, IR proximity sensor, Hall effect sensors, IMUs, GPS,<br />
-sensor interfacing (analog, digital, I<sup>2</sup>C, SPI, UART, CAN, Serial, I2S)</p>
-<p><script type="text/javascript" src="//platform.linkedin.com/in.js"></script><br />
-<script type="IN/MemberProfile" data-id="https://www.linkedin.com/in/amirpourshafiee" data-format="inline" data-related="false"></script></p>
-			</div><!-- .entry-content -->
-
-		</div><!-- .wrap -->
-	</div><!-- .panel-content -->
-
-</article><!-- #post-## -->
-
-
-	</main><!-- #main -->
-</div><!-- #primary -->
-
-
-		</div><!-- #content -->
-
-		<footer id="colophon" class="site-footer" role="contentinfo">
-			<div class="wrap">
-
-
-			</div><!-- .wrap -->
-		</footer><!-- #colophon -->
-	</div><!-- .site-content-contain -->
-</div><!-- #page -->
-	<div style="display:none">
-	</div>
-
-
-</body>
-</html>
+<div class="contact" id="contact">
+  <div class="wrap">
+    <section>
+      <h2>Contact</h2>
+      <div class="contact-list">
+        <span>amirpourshafiee@gmail.com</span>
+        <a href="https://www.linkedin.com/in/amirpourshafiee/">linkedin.com/in/amirpourshafiee</a>
+      </div>
+    </section>
+  </div>
+</div>
