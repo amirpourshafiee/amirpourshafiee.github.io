@@ -69,7 +69,7 @@ def test_in_page_links_resolve(page):
 
 def test_only_allowed_external_hosts():
     hosts = set(re.findall(r'(?:href|src)="https://([^/"]+)', HTML))
-    assert hosts <= {"fonts.googleapis.com", "fonts.gstatic.com", "www.linkedin.com", "search.proquest.com", "arc.aiaa.org", "www.udacity.com", "www.coursera.org", "trialtrue.itch.io"}
+    assert hosts <= {"fonts.googleapis.com", "fonts.gstatic.com", "www.linkedin.com", "search.proquest.com", "arc.aiaa.org", "www.udacity.com", "www.coursera.org", "trialtrue.itch.io", "github.com"}
 
 
 @pytest.mark.parametrize(
@@ -231,6 +231,24 @@ def test_google_role_is_not_on_assignment_phrasing():
     # (Google's own term for vendor contract staff) via Magic Leap.
     assert "on assignment at Google" not in HTML
     assert "Google (TVC via Magic Leap)" in HTML
+
+
+def test_vio_regression_harness_present():
+    # Added per explicit request: Amir's vioreg / vio-regress project, confirmed
+    # live on its GitHub repo page (README) on 2026-11-14.
+    for fact in [
+        "github.com/amirpourshafiee/vio-regress",
+        "EuRoC", "OpenVINS", "Cohen's kappa",
+        "RPE", "ATE", "thresholds.yaml",
+    ]:
+        assert fact in HTML
+
+
+def test_vio_regression_diagram_is_accessible_svg():
+    assert '<svg viewBox="0 0 900 320"' in HTML
+    assert 'role="img"' in HTML
+    match = re.search(r'<svg\b[^>]*aria-label="([^"]{20,})"', HTML)
+    assert match, "diagram svg should carry a descriptive aria-label"
 
 
 def test_video_assets_exist_and_stay_small():
