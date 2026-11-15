@@ -85,6 +85,7 @@ h3 { font: 600 1.0625rem/1.35 var(--body); margin: 0; }
 .gallery .g-main img { object-fit: contain; background: #000000; }
 .feature-video { grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); align-items: center; }
 .clip video { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 16 / 9; background: var(--frame); }
+.clip svg { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 900 / 320; background: var(--frame); }
 .gallery figcaption { position: absolute; left: 0; bottom: 0; padding: 4px 8px; background: var(--frame); color: var(--frame-ink); font-size: .6875rem; }
 .thumb { aspect-ratio: 4 / 3; height: auto; margin-bottom: 14px; object-fit: contain; }
 .thumb-light { background: #ffffff; }
@@ -235,6 +236,75 @@ h3 { font: 600 1.0625rem/1.35 var(--body); margin: 0; }
       </div>
       <figure class="clip">
         <video src="assets/car-detection.mp4" poster="assets/car-detection.jpg" width="960" height="540" autoplay muted loop playsinline aria-label="Dashcam clip with detected cars highlighted by shaded boxes."></video>
+      </figure>
+    </article>
+    <article class="feature feature-video">
+      <div class="feature-text">
+        <span class="mono tag">Open source, in progress</span>
+        <h3>VIO Regression Harness</h3>
+        <p>A CI gate that catches accuracy regressions in visual-inertial odometry before they ship. It replays EuRoC benchmark sequences through OpenVINS inside a digest-pinned Docker image, then scores the run's ATE and RPE against committed thresholds.</p>
+        <p>A nightly workflow runs the full replay against the pinned image; a pull request workflow checks the same thresholds against frozen golden results in seconds, without launching OpenVINS at all. The gate is built and running: the latest nightly run passed all three baseline sequences. A VLM judge that scores perception quality with Cohen's kappa is scaffolded but not yet run on real data.</p>
+        <p><a href="https://github.com/amirpourshafiee/vio-regress">github.com/amirpourshafiee/vio-regress</a></p>
+      </div>
+      <figure class="clip">
+        <svg viewBox="0 0 900 320" role="img" aria-label="Diagram: a nightly workflow replays EuRoC sequences through a digest-pinned OpenVINS image, while a pull request workflow checks frozen golden results instead, without running OpenVINS; both feed the same scorer and thresholds gate, which outputs pass or fail." style="color: var(--frame-ink);">
+          <defs>
+            <marker id="vioreg-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="currentColor"></path>
+            </marker>
+          </defs>
+          <rect x="0" y="0" width="900" height="320" fill="var(--frame)"></rect>
+
+          <rect x="20" y="70" width="140" height="40" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+          <text x="90" y="94" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="12" fill="currentColor">NIGHTLY (cron)</text>
+
+          <rect x="20" y="210" width="140" height="40" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+          <text x="90" y="234" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="12" fill="currentColor">PULL REQUEST</text>
+
+          <line x1="160" y1="90" x2="186" y2="90" stroke="currentColor" stroke-width="1.5" marker-end="url(#vioreg-arrow)"></line>
+          <line x1="160" y1="230" x2="186" y2="230" stroke="currentColor" stroke-width="1.5" marker-end="url(#vioreg-arrow)"></line>
+
+          <rect x="190" y="70" width="180" height="40" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+          <text x="280" y="83" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="12" fill="currentColor">
+            <tspan x="280" dy="0">OpenVINS image</tspan>
+            <tspan x="280" dy="14">(GHCR, pinned)</tspan>
+          </text>
+
+          <rect x="190" y="210" width="180" height="40" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+          <text x="280" y="223" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="12" fill="currentColor">
+            <tspan x="280" dy="0">golden results</tspan>
+            <tspan x="280" dy="14">(frozen JSON)</tspan>
+          </text>
+          <text x="280" y="258" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" fill="currentColor" opacity=".75">no OpenVINS</text>
+
+          <line x1="370" y1="90" x2="396" y2="90" stroke="currentColor" stroke-width="1.5" marker-end="url(#vioreg-arrow)"></line>
+
+          <rect x="400" y="70" width="190" height="40" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+          <text x="495" y="83" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="12" fill="currentColor">
+            <tspan x="495" dy="0">replay 3 EuRoC</tspan>
+            <tspan x="495" dy="14">sequences</tspan>
+          </text>
+
+          <path d="M590,90 H606 V140 H616" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#vioreg-arrow)"></path>
+          <path d="M370,230 H606 V220 H616" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#vioreg-arrow)"></path>
+
+          <rect x="620" y="110" width="170" height="140" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+          <text x="705" y="172" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="12" fill="currentColor">
+            <tspan x="705" dy="0">SCORER vs</tspan>
+            <tspan x="705" dy="16">thresholds.yaml</tspan>
+          </text>
+          <text x="705" y="212" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" fill="currentColor" opacity=".75">RPE &#8804; 1.28 &middot; ATE &#8804; 1.5</text>
+
+          <path d="M790,140 H806 V130 H814" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#vioreg-arrow)"></path>
+          <path d="M790,220 H806 V230 H814" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#vioreg-arrow)"></path>
+
+          <rect x="818" y="110" width="62" height="40" rx="2" fill="var(--accent)"></rect>
+          <text x="849" y="134" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="12" font-weight="600" fill="var(--frame)">PASS</text>
+
+          <rect x="818" y="210" width="62" height="40" rx="2" fill="var(--track)"></rect>
+          <text x="849" y="234" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="12" font-weight="600" fill="var(--frame)">FAIL</text>
+        </svg>
+        <figcaption class="mono"><span>Two paths into one gate: full replay nightly, frozen check on PRs</span></figcaption>
       </figure>
     </article>
     <div class="projects">
