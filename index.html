@@ -148,10 +148,9 @@ h3 { font: 600 1.0625rem/1.35 var(--body); margin: 0; }
           <h3>Staff Software Engineer, QA</h3>
           <p class="org">Google (TVC via Magic Leap), Sunnyvale, CA</p>
           <ul>
-            <li>Led perception quality validation for an Android XR reference design across <span class="good">5</span> release milestones, setting release criteria and presenting go/no-go status to engineering and program leadership. Surfaced <span class="good">14</span> release-blocking defects before launch.</li>
-            <li>Built an automated LLM-as-a-judge evaluation framework with Gemini, benchmarked against <span class="good">200</span> annotated videos at <span class="good">&kappa; = 0.68</span> and an <span class="good">8%</span> false positive rate.</li>
-            <li>Wrote test protocols and acceptance criteria for head tracking, marker and object detection, and online calibration, adopted by a partner team and 6 test engineers.</li>
-            <li>Conducted weekly regression runs for 2 Android XR devices and a Galaxy XR.</li>
+            <li>Led a <span class="good">5-person</span> team validating perception quality on the Samsung Galaxy XR, Xreal Aura, and an Android XR reference design across <span class="good">12</span> release milestones, setting release criteria and presenting go/no-go status to program leadership. Surfaced <span class="good">21</span> release-blocking defects before launch.</li>
+            <li>Built an automated LLM-as-a-judge evaluation framework with Gemini to replace manual quality review of Travel Mode datasets, benchmarked against <span class="good">200</span> human-annotated videos at <span class="good">&kappa; = 0.68</span> and an <span class="good">8%</span> false positive rate.</li>
+            <li>Authored test protocols and acceptance criteria for head tracking, marker and object detection, and online calibration, adopted by a partner team and 6 test engineers.</li>
           </ul>
         </div>
       </article>
@@ -161,9 +160,9 @@ h3 { font: 600 1.0625rem/1.35 var(--body); margin: 0; }
           <h3>Staff Software Engineer, Software Quality</h3>
           <p class="org">Magic Leap, Sunnyvale, CA</p>
           <ul>
-            <li>Led a perception effort with 3 QA engineers.</li>
-            <li>Built hardware-in-the-loop automation on a robotic arm platform for dynamic marker detection scenarios, fully automating marker tracking regression and removing about <span class="good">120 hours</span> of manual testing per release.</li>
-            <li>Raised perception test coverage from <span class="good">85%</span> to <span class="good">93%</span> by working with 8 development teams on defect triage and test strategy.</li>
+            <li>Built hardware-in-the-loop automation on a robotic arm platform for dynamic marker detection scenarios, fully automating marker tracking regression and eliminating about <span class="good">120 hours</span> of manual testing per release.</li>
+            <li>Led a perception quality effort with 3 QA engineers, reporting to the senior director of software quality.</li>
+            <li>Raised perception test coverage from <span class="good">85%</span> to <span class="good">93%</span> across the hardware platform by partnering with 8 development teams on defect triage and test strategy.</li>
           </ul>
         </div>
       </article>
@@ -173,10 +172,10 @@ h3 { font: 600 1.0625rem/1.35 var(--body); margin: 0; }
           <h3>Senior Software Engineer, Perception Quality</h3>
           <p class="org">Magic Leap, Sunnyvale, CA</p>
           <ul>
+            <li>Automated 23% of perception test cases (350 smoke and regression tests), reducing post-release defects by <span class="good">30%</span>.</li>
             <li>Designed tools, metrics, and test cases to validate online calibration, SLAM, VIO, marker tracking, and depth sensing.</li>
-            <li>Automated 23% of perception test cases (350 smoke and regression tests) and reduced post-release defects by <span class="good">30%</span>.</li>
-            <li>Led triage of customer software feedback, managing and presenting weekly reports to the executive leadership team.</li>
-            <li>Built a perception system dashboard adopted by program management and software leadership, replacing manual status prep with an automated weekly newsletter.</li>
+            <li>Led triage of customer software feedback, presenting weekly reports to the executive leadership team.</li>
+            <li>Built a perception system dashboard adopted by program management and software leadership, replacing manual defect-status prep with an automated weekly newsletter.</li>
             <li>Received the Super Leaper award, a company-wide monthly recognition, in March 2023.</li>
           </ul>
         </div>
@@ -187,8 +186,8 @@ h3 { font: 600 1.0625rem/1.35 var(--body); margin: 0; }
           <h3>Software Development Engineer in Test, Computer Vision</h3>
           <p class="org">Magic Leap, Sunnyvale, CA</p>
           <ul>
-            <li>Turned perception system requirements into test cases and tooling specs for motion estimation, 3D reconstruction, and calibration.</li>
-            <li>Root caused defects in those systems with development tiger teams.</li>
+            <li>Translated perception system requirements into test cases and tooling specs, establishing the test basis for motion estimation, 3D reconstruction, and calibration.</li>
+            <li>Root caused motion estimation, 3D reconstruction, and calibration defects with development tiger teams, shortening fix cycles and time-to-market.</li>
           </ul>
         </div>
       </article>
@@ -243,7 +242,8 @@ h3 { font: 600 1.0625rem/1.35 var(--body); margin: 0; }
         <span class="mono tag">Open source, in progress</span>
         <h3>VIO Regression Harness</h3>
         <p>A CI gate that catches accuracy regressions in visual-inertial odometry before they ship. It replays EuRoC benchmark sequences through OpenVINS inside a digest-pinned Docker image, then scores the run's ATE and RPE against committed thresholds.</p>
-        <p>A nightly workflow runs the full replay against the pinned image; a pull request workflow checks the same thresholds against frozen golden results in seconds, without launching OpenVINS at all. The gate is built and running: the latest nightly run passed all three baseline sequences. A VLM judge that scores perception quality with Cohen's kappa is scaffolded but not yet run on real data.</p>
+        <p>A nightly workflow runs the full replay against the pinned image; a pull request workflow checks the same thresholds against frozen golden results in seconds, without launching OpenVINS at all. The gate is built and running: the latest nightly run passed all three baseline sequences.</p>
+        <p>I stress-tested the thresholds with 45 injected faults across known failure modes; the gate caught 2 of 5 fault types, and instead of loosening the thresholds to pass the rest, I documented the gap. A VLM judge that scores perception quality with Cohen's kappa is scaffolded but not yet run on real data.</p>
         <p><a href="https://github.com/amirpourshafiee/vio-regress">github.com/amirpourshafiee/vio-regress</a></p>
       </div>
       <figure class="clip">
