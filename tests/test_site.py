@@ -201,15 +201,19 @@ def test_llm_labs_described():
 
 
 def test_resume_cross_check_additions_present():
-    # Confirmed via Amir's own resume (AmirPourshafiee_Resume_Nov2026.pdf):
-    # three facts that were on the resume but missing from the site, added
-    # in the resume cross-check pass.
+    # Confirmed via Amir's own resume (AmirPourshafiee_Resume_Nov2026.pdf),
+    # resume cross-check pass.
     for fact in [
-        "2 Android XR devices and a Galaxy XR",
-        "Led triage of customer software feedback, managing and presenting weekly reports to the executive leadership team",
+        "Samsung Galaxy XR, Xreal Aura, and an Android XR reference design",
+        "Led triage of customer software feedback, presenting weekly reports to the executive leadership team",
         "Imatest",
     ]:
         assert fact in HTML
+    # Dropped per the Nov 2026 resume update: team-size/device numbers changed
+    # (12 milestones, 21 defects, 5-person team), and the old standalone
+    # weekly-regression-runs bullet was folded into the team-validation bullet.
+    assert "managing and presenting weekly reports" not in HTML
+    assert "2 Android XR devices and a Galaxy XR" not in HTML
 
 
 def test_self_description_is_not_plain_test_engineer():
@@ -235,13 +239,23 @@ def test_google_role_is_not_on_assignment_phrasing():
 
 def test_vio_regression_harness_present():
     # Added per explicit request: Amir's vioreg / vio-regress project, confirmed
-    # live on its GitHub repo page (README) on 2026-11-14.
+    # live on its GitHub repo page (README) on 2026-11-14, with fault-injection
+    # stress-test numbers added from the Nov 2026 resume update.
     for fact in [
         "github.com/amirpourshafiee/vio-regress",
         "EuRoC", "OpenVINS", "Cohen's kappa",
         "RPE", "ATE", "thresholds.yaml",
+        "45 injected faults", "caught 2 of 5 fault types",
     ]:
         assert fact in HTML
+
+
+def test_google_assignment_numbers_match_nov_2026_resume():
+    # Team size, milestone count, and defect count updated per the Nov 2026
+    # resume (previously 5 milestones / 14 defects with no stated team size).
+    for fact in ["5-person", "12", "21", "release-blocking defects"]:
+        assert fact in HTML
+    assert "Surfaced <span class=\"good\">14</span>" not in HTML
 
 
 def test_vio_regression_diagram_is_accessible_svg():
@@ -249,6 +263,22 @@ def test_vio_regression_diagram_is_accessible_svg():
     assert 'role="img"' in HTML
     match = re.search(r'<svg\b[^>]*aria-label="([^"]{20,})"', HTML)
     assert match, "diagram svg should carry a descriptive aria-label"
+
+
+def test_mutagent_project_present():
+    # Added per explicit request: Amir's mutagent project, an LLM
+    # test-generation agent graded by mutation testing rather than line
+    # coverage, added 2026-11-19.
+    for fact in [
+        "github.com/amirpourshafiee/mutagent",
+        "mutation testing",
+        "8 modules",
+        "coverage-guided agent",
+        "Claude Sonnet 5.5",
+        "7 of 8",
+        "81% to 97%",
+    ]:
+        assert fact in HTML
 
 
 def test_video_assets_exist_and_stay_small():
