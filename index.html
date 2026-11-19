@@ -374,6 +374,11 @@ h3 { font: 600 1.0625rem/1.35 var(--body); margin: 0; }
         <h3>Generative AI with LLMs labs</h3>
         <p>Three graded labs: zero, one, and few-shot prompting for dialogue summarization; full and parameter-efficient (LoRA) fine-tuning of a summarization model; and reinforcement learning (PPO) to fine-tune FLAN-T5 toward less-toxic summaries. <a href="https://www.coursera.org/account/accomplishments/verify/RBGXG6D3CEQ3">Certificate</a>, Jul 2024.</p>
       </article>
+      <article>
+        <span class="mono tag">Open source, LLM agents</span>
+        <h3>mutagent</h3>
+        <p>An LLM agent that writes pytest tests for a Python module from its code and a plain-English spec, then grades itself by mutation testing instead of line coverage: it drafts tests, repairs failures, then improves by targeting the mutants the first pass missed. Benchmarked against 8 modules with a harness comparing human-written tests, a single-shot pass, a coverage-guided agent, and the full mutation-guided agent, 3 repeats each on Claude Sonnet 5.5: the mutation-guided agent beat the human-written tests on all 8 modules and the coverage-guided agent on 7 of 8, lifting one held-out module's mutation score from 81% to 97%. The writeup is candid about the limits: a small study, one model, and one module where the coverage agent won because of a missing plotting library. <a href="https://github.com/amirpourshafiee/mutagent">github.com/amirpourshafiee/mutagent</a>, <a href="https://github.com/amirpourshafiee/mutagent/blob/main/docs/mutagent-writeup.pdf">writeup (PDF)</a>.</p>
+      </article>
     </div>
   </section>
 
