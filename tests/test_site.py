@@ -69,7 +69,7 @@ def test_in_page_links_resolve(page):
 
 def test_only_allowed_external_hosts():
     hosts = set(re.findall(r'(?:href|src)="https://([^/"]+)', HTML))
-    assert hosts <= {"fonts.googleapis.com", "fonts.gstatic.com", "www.linkedin.com", "search.proquest.com", "arc.aiaa.org", "www.udacity.com", "www.coursera.org", "trialtrue.itch.io", "github.com"}
+    assert hosts <= {"fonts.googleapis.com", "fonts.gstatic.com", "www.linkedin.com", "search.proquest.com", "arc.aiaa.org", "www.udacity.com", "www.coursera.org", "trialtrue.itch.io", "github.com", "oppivo.gumroad.com"}
 
 
 @pytest.mark.parametrize(
@@ -330,4 +330,12 @@ def test_snugcad_card_has_video_and_honest_limits():
     tag = re.search(r"<video[^>]*snugcad-rover\.mp4[^>]*>", HTML).group(0)
     assert "controls" in tag and 'preload="none"' in tag and "autoplay" not in tag
     for fact in ["SnugCAD", "URDF (Unified Robot Description Format)", "placeholder blocks", "nothing on the rover has been printed"]:
+        assert fact in HTML
+
+
+def test_snugcad_card_links_to_store_with_terms():
+    # The store link sits next to the price and the terms buyers agree to
+    # in the Gumroad listing: guarantee, Chrome only, as is, no support.
+    assert 'href="https://oppivo.gumroad.com/l/snugcad"' in HTML
+    for fact in ["30-day money-back guarantee", "Tested only in Chrome", "sold as is", "no support service"]:
         assert fact in HTML
