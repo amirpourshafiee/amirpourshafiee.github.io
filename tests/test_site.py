@@ -318,3 +318,16 @@ def test_video_assets_exist_and_stay_small():
         assert (root / src).is_file(), src
     assert (root / "assets/car-detection.mp4").stat().st_size < 3_000_000
     assert re.search(r"<video[^>]*\bmuted\b[^>]*\bplaysinline\b", HTML)
+
+
+def test_snugcad_card_has_video_and_honest_limits():
+    # The SnugCAD card embeds the rover demo with controls and no autoplay
+    # (the file is about 9 MB), and states the limits shown in the video.
+    root = Path(__file__).parent.parent
+    for src in ["assets/snugcad-rover.mp4", "assets/snugcad-rover.jpg"]:
+        assert (root / src).is_file(), src
+        assert src in HTML
+    tag = re.search(r"<video[^>]*snugcad-rover\.mp4[^>]*>", HTML).group(0)
+    assert "controls" in tag and 'preload="none"' in tag and "autoplay" not in tag
+    for fact in ["SnugCAD", "URDF (Unified Robot Description Format)", "placeholder blocks", "nothing on the rover has been printed"]:
+        assert fact in HTML
