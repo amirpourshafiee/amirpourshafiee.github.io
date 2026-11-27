@@ -205,6 +205,18 @@ h3 { font: 600 1.0625rem/1.35 var(--body); margin: 0; }
     </article>
     <article class="feature feature-video">
       <div class="feature-text">
+        <span class="mono tag">Parametric CAD, robotics</span>
+        <h3>SnugCAD</h3>
+        <p>A parametric CAD tool for 3D printing and robot prototyping that runs in Chrome as one offline file. The video, about three and a half minutes with no sound, designs a small rover from scratch: chassis, motor and board mounts, fasteners, wheels with joints, and an exploded view.</p>
+        <p>It exports URDF (Unified Robot Description Format) and MJCF (MuJoCo XML) with mass, centre of mass and inertia worked out from the solids. In the demo, the motors, driver and battery are placeholder blocks, and nothing on the rover has been printed yet.</p>
+        <p>$19 one-time, with a 30-day money-back guarantee. Tested only in Chrome, sold as is, no support service. <a href="https://oppivo.gumroad.com/l/snugcad">Get SnugCAD on Gumroad</a></p>
+      </div>
+      <figure class="clip">
+        <video src="assets/snugcad-rover.mp4" poster="assets/snugcad-rover.jpg" width="1600" height="900" controls preload="none" playsinline aria-label="Screen recording of SnugCAD: designing a small rover, from chassis and fasteners to wheels, joints and an exploded view. No sound."></video>
+      </figure>
+    </article>
+    <article class="feature feature-video">
+      <div class="feature-text">
         <span class="mono tag">Open source, in progress</span>
         <h3>VIO Regression Harness</h3>
         <p>A CI gate that catches accuracy regressions in visual-inertial odometry before they ship. It replays EuRoC benchmark sequences through OpenVINS inside a digest-pinned Docker image, then scores the run's ATE and RPE against committed thresholds.</p>

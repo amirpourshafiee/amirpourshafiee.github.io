@@ -69,7 +69,7 @@ def test_in_page_links_resolve(page):
 
 def test_only_allowed_external_hosts():
     hosts = set(re.findall(r'(?:href|src)="https://([^/"]+)', HTML))
-    assert hosts <= {"fonts.googleapis.com", "fonts.gstatic.com", "www.linkedin.com", "search.proquest.com", "arc.aiaa.org", "www.udacity.com", "www.coursera.org", "trialtrue.itch.io", "github.com"}
+    assert hosts <= {"fonts.googleapis.com", "fonts.gstatic.com", "www.linkedin.com", "search.proquest.com", "arc.aiaa.org", "www.udacity.com", "www.coursera.org", "trialtrue.itch.io", "github.com", "oppivo.gumroad.com"}
 
 
 @pytest.mark.parametrize(
@@ -318,3 +318,24 @@ def test_video_assets_exist_and_stay_small():
         assert (root / src).is_file(), src
     assert (root / "assets/car-detection.mp4").stat().st_size < 3_000_000
     assert re.search(r"<video[^>]*\bmuted\b[^>]*\bplaysinline\b", HTML)
+
+
+def test_snugcad_card_has_video_and_honest_limits():
+    # The SnugCAD card embeds the rover demo with controls and no autoplay
+    # (the file is about 9 MB), and states the limits shown in the video.
+    root = Path(__file__).parent.parent
+    for src in ["assets/snugcad-rover.mp4", "assets/snugcad-rover.jpg"]:
+        assert (root / src).is_file(), src
+        assert src in HTML
+    tag = re.search(r"<video[^>]*snugcad-rover\.mp4[^>]*>", HTML).group(0)
+    assert "controls" in tag and 'preload="none"' in tag and "autoplay" not in tag
+    for fact in ["SnugCAD", "URDF (Unified Robot Description Format)", "placeholder blocks", "nothing on the rover has been printed"]:
+        assert fact in HTML
+
+
+def test_snugcad_card_links_to_store_with_terms():
+    # The store link sits next to the price and the terms buyers agree to
+    # in the Gumroad listing: guarantee, Chrome only, as is, no support.
+    assert 'href="https://oppivo.gumroad.com/l/snugcad"' in HTML
+    for fact in ["30-day money-back guarantee", "Tested only in Chrome", "sold as is", "no support service"]:
+        assert fact in HTML
